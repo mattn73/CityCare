@@ -1,0 +1,795 @@
+/*!
+* STYLE.CSS
+*
+* Main theme file.
+*
+* Version 1.0
+*
+*/
+/*-----------------------------------------------------------------------------------------------------------
+[Table of contents]
+
+1. Globals and typography
+2. jQuery Mobile UI styling
+3. Tables
+4. Common Classes
+5. Header
+6. Sliders
+7. Sidebar
+8. Blog
+9. Works
+10. Widgets
+11. Footer
+
+-----------------------------------------------------------------------------------------------------------*/
+/* 1. Globals and typography
+-----------------------------------------------------------------------------------------------------------*/
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+[data-role=page] .ui-icon-carat-r:after {
+
+    background-color: #0a71b3;
+}
+
+[data-role=page] .ui-content .ui-btn {
+    background-color: #fff;
+    color: #0a71b3;
+}
+
+[data-role=page] .jqm-header {
+    background: #fff;
+    border-top: 4px solid #1ea8e0;
+    border-bottom-color: #eee;
+}
+
+.ui-page-theme-a .ui-btn {
+    font-size: 1.2em;
+    background-color: #0a71b3;
+    color: #fff;
+}
+
+/*.ui-page-theme-a .ui-btn .fa{
+    font-size:1em;
+}*/
+[data-role=navbar] ul li a {
+    padding: 1.5em 1em;
+    background-color: #0a71b3 !important;
+    color: #fff !important;
+    border-color: #1ea8e0 !important;
+    font-size: 24px;
+}
+
+[data-role=navbar] .fa {
+    font-size: 1.8em;
+}
+
+* {
+    /*    font-family: 'Lato', sans-serif;*/
+    /*    font-weight: 400;
+        text-shadow: none !important;*/
+}
+
+::selection {
+    background: #b4ed00;
+    /* WebKit/Blink Browsers */
+}
+
+::-moz-selection {
+    background: #98cb00;
+    /* Gecko Browsers */
+}
+
+.bar {
+    display: block;
+    border: none;
+    height: 3px;
+    width: 100%;
+    position: relative;
+    margin: 50px 0 25px 0;
+}
+
+.bar-value {
+    border: none;
+    background: #000;
+    width: 0%;
+    height: 3px;
+    position: absolute;
+    content: ' ';
+    display: block;
+}
+
+.bar-title {
+    margin: 0;
+    position: absolute;
+    top: -30px;
+    font-weight: 700;
+    font-size: 16px;
+    display: block;
+}
+
+.bar-number {
+    position: absolute;
+    top: -31px;
+    right: 0;
+    font-weight: 100;
+    font-size: 16px;
+}
+
+.highlight {
+    background: #d4fd00;
+}
+
+/* Pricing tables */
+
+.pricing-table {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 520px;
+    margin: 2em auto;
+}
+
+.pricing-table thead th {
+    font-size: 30px;
+    padding: 25px 0;
+    font-weight: 300;
+}
+
+.pricing-table tbody th {
+    padding: 12px;
+    line-height: 2;
+}
+
+.pricing-table .pricing-table-price {
+    background-color: #999;
+    color: #fff;
+    font-size: 48px;
+}
+
+.pricing-table .pricing-table-price th {
+    line-height: 1.5;
+    box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.25);
+}
+
+.pricing-table .pricing-table-price sup {
+    color: #fff;
+    font-size: 18px;
+    vertical-align: middle;
+    margin-bottom: 2px;
+    display: inline-block;
+}
+
+.pricing-table .pricing-table-price sub {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 300;
+    vertical-align: middle;
+    margin-bottom: 2px;
+    display: inline-block;
+}
+
+.pricing-table .order-now {
+    padding: 0 8px;
+}
+
+.pricing-table .order-now button {
+    line-height: 1.25;
+    display: block;
+    margin: 16px 0 8px 0;
+}
+
+.red {
+    color: #fe4a19;
+}
+
+.blue {
+    color: #1b60ef;
+}
+
+.green {
+    color: #19fe24;
+}
+
+.background-red {
+    background-color: #fe4a19;
+}
+
+.background-green {
+    background-color: #17cfab;
+}
+
+.background-blue {
+    background-color: #75a2ff;
+}
+
+.background-yellow {
+    background-color: #ded716;
+}
+
+/* 2. UI styling
+-----------------------------------------------------------------------------------------------------------*/
+
+/* 3. General styles and typography
+-----------------------------------------------------------------------------------------------------------*/
+
+/* 4. jQuery Mobile UI styling
+-----------------------------------------------------------------------------------------------------------*/
+
+/* 5. Tables
+-----------------------------------------------------------------------------------------------------------*/
+
+/* 6. Aditional styles
+-----------------------------------------------------------------------------------------------------------*/
+
+.box-alert {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    position: relative;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+
+.box-alert .fa {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 20px 0 0px;
+    color: #fff;
+    font-size: 26px;
+}
+
+.box-alert p {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    width: 70%;
+    width: calc(100% - 100px);
+    width: -webkit-calc(100% - 100px);
+    position: relative;
+    left: 0px;
+    text-align: left;
+    color: #fff;
+}
+
+.box-alert * {
+    color: #fff;
+    line-height: 1.5;
+}
+
+.box-alert a {
+    text-decoration: none;
+    border-bottom: 1px dotted #fff;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.box-alert a:hover {
+    border-color: #ddd;
+}
+
+.box-alert-info {
+    background: #0a91b9;
+}
+
+.box-alert-warning {
+    background: #6543a0;
+}
+
+.box-alert-error {
+    background: #ff2222;
+}
+
+.box-alert-success {
+    background: #73dd65;
+}
+
+/* 7. Header
+-----------------------------------------------------------------------------------------------------------*/
+
+[data-role=header] {
+    background-color: #fff !important;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid #1ea8e0 !important;
+}
+
+/*[data-role=header][data-position=fixed] {
+    position: fixed;
+    padding: 0px 0 0 0;
+    margin: 0 0 0 0;
+    width: 90% !important;
+    width: calc(100% - 28px) !important;
+    width: -webkit-calc(100%) !important;
+    background-color: transparent;
+}*/
+div.ui-page.ui-page-theme-a.ui-page-header-fixed.ui-page-active {
+    padding-top: 0 !important;
+}
+
+[data-role=header] #sidebar-btn-right {
+    position: absolute;
+    right: 12px;
+    top: 20px;
+    left: auto;
+    width: 20px;
+    height: 4px;
+    display: block;
+    cursor: pointer;
+    border-bottom: 1px solid #0a71b3;
+    z-index: 999;
+    -ms-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+[data-role=header] #sidebar-btn-right:before {
+    border-top: 1px solid #0a71b3;
+    content: " ";
+    display: inline-block;
+    height: 3px;
+    width: 18px;
+    position: absolute;
+    top: 0;
+    padding: 16px 0 0 0;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+[data-role=header] #sidebar-btn-right:after {
+    border-bottom: 1px solid #0a71b3;
+    content: " ";
+    display: inline-block;
+    height: 3px;
+    width: 28px;
+    position: absolute;
+    top: 5px;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.ui-panel-animate.ui-panel-page-content-position-right #sidebar-btn-right {
+    width: 14px;
+}
+
+.ui-panel-animate #sidebar-btn-right:before {
+    width: 14px;
+}
+
+.ui-panel-animate #sidebar-btn-right:after {
+    width: 28px;
+}
+
+[data-role=header] .header-title {
+
+    font-weight: bold;
+    color: #0a71b3;
+}
+
+[data-role=header].dark:hover {
+    background-color: rgba(255, 255, 255, .9);
+}
+
+[data-role=header].dark .header-title {
+    color: #111;
+}
+
+[data-role=header].dark #sidebar-btn-right,
+[data-role=header].dark #sidebar-btn-right:after,
+[data-role=header].dark #sidebar-btn-right:before {
+    border-color: #0a71b3;
+}
+
+[data-role=header] .header-back-button {
+    display: inline-block;
+    color: #333;
+    text-decoration: none;
+    font-size: 20px;
+    position: absolute;
+    right: 12px;
+    top: 8px;
+    left: auto;
+    width: 20px;
+    height: 4px;
+    display: block;
+    cursor: pointer;
+    z-index: 999;
+    -webkit-transition: all 450ms cubic-bezier(0.665, 0.165, 0.130, 0.715);
+    -moz-transition: all 450ms cubic-bezier(0.665, 0.165, 0.130, 0.715);
+    -ms-transition: all 450ms cubic-bezier(0.665, 0.165, 0.130, 0.715);
+    -o-transition: all 450ms cubic-bezier(0.665, 0.165, 0.130, 0.715);
+    transition: all 450ms cubic-bezier(0.665, 0.165, 0.130, 0.715);
+    -webkit-transition-timing-function: cubic-bezier(0.665, 0.165, 0.130, 0.715);
+    -moz-transition-timing-function: cubic-bezier(0.665, 0.165, 0.130, 0.715);
+    -ms-transition-timing-function: cubic-bezier(0.665, 0.165, 0.130, 0.715);
+    -o-transition-timing-function: cubic-bezier(0.665, 0.165, 0.130, 0.715);
+    transition-timing-function: cubic-bezier(0.665, 0.165, 0.130, 0.715);
+}
+
+[data-role=header] .header-back-button:hover {
+    right: 15px;
+    color: #000;
+}
+
+[data-role=header] .header-back-button i {
+    margin-right: 5px;
+}
+
+/* 8. Slider
+-----------------------------------------------------------------------------------------------------------*/
+
+/* 9. Sidebars
+-----------------------------------------------------------------------------------------------------------*/
+/* Animation */
+/*
+.ui-panel {
+    width: 10em;
+}
+.ui-panel-position-left {
+    left: -10em;
+}
+.ui-panel-position-right {
+    right: -10em;
+}
+.ui-panel-page-content-position-right {
+    left: -10em;
+    right: 10em
+}
+.ui-panel-page-content-position-left {
+    right: -10em;
+    left: 10em
+}
+.ui-panel-dismiss-open.ui-panel-dismiss-position-right {
+    right: 10em;
+}
+.ui-panel-dismiss-open.ui-panel-dismiss-position-left {
+    left: 10em;
+}
+.ui-panel-position-right.ui-panel-display-reveal,
+.ui-panel-position-left.ui-panel-display-reveal {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+.ui-panel-animate.ui-panel-page-content-position-left {
+    -webkit-transform: translate3d(10em, 0, 0);
+    -moz-transform: translate3d(10em, 0, 0);
+    transform: translate3d(10em, 0, 0);
+}
+.ui-panel-animate.ui-panel-page-content-position-right {
+    -webkit-transform: translate3d(-10em, 0, 0);
+    -moz-transform: translate3d(-10em, 0, 0);
+    transform: translate3d(-10em, 0, 0);
+}
+.ui-panel-animate.ui-panel-position-left.ui-panel-display-overlay,
+.ui-panel-animate.ui-panel-position-left.ui-panel-display-push {
+    -webkit-transform: translate3d(-10em, 0, 0);
+    -moz-transform: translate3d(-10em, 0, 0);
+    transform: translate3d(-10em, 0, 0);
+}
+.ui-panel-animate.ui-panel-position-right.ui-panel-display-overlay,
+.ui-panel-animate.ui-panel-position-right.ui-panel-display-push {
+    -webkit-transform: translate3d(10em, 0, 0);
+    -moz-transform: translate3d(10em, 0, 0);
+    transform: translate3d(10em, 0, 0);
+}
+[data-role=panel] {
+    border: none;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    background: #F2F2F2;
+    padding: 0;
+}
+.ui-panel-position-left .ui-panel-inner {
+    padding-top: 1px;
+    padding-right: 14px;
+    padding-left: 2px;
+    text-align: left;
+}
+.ui-panel-inner {
+    padding-top: 1px;
+    padding-right: 2px;
+    padding-left: 12px;
+}*/
+[data-role=panel] .ui-listview {
+    margin: 0;
+}
+
+[data-role=panel].ui-panel-position-right .ui-listview li a {
+    text-align: left;
+    border: none;
+    background-color: transparent;
+}
+
+[data-role=panel].ui-panel-position-left .ui-listview li a,
+[data-role=panel].ui-panel-position-right.ui-panel-display-overlay .ui-listview li a {
+    text-align: left;
+}
+
+[data-role=panel] ul {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+[data-role=panel] .ui-listview > .ui-li-divider {
+    padding: 0.5em 0 0 0;
+}
+
+[data-role=panel] ul li {
+    background: none;
+    border: none;
+    text-shadow: none;
+    margin: 4px 0;
+    list-style: none;
+}
+
+[data-role=panel] ul li:first-child {
+    margin-top: 0;
+}
+
+[data-role=panel] ul li a {
+    padding: 6px 0;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    line-height: 1.25;
+    color: #333;
+    text-decoration: none;
+    letter-spacing: normal;
+    border: none;
+}
+
+[data-role=panel] ul li .ui-btn {
+    white-space: normal;
+}
+
+[data-role=panel] .ui-btn-icon-right::after {
+    display: none;
+}
+
+[data-role=panel] ul li ul li {
+    margin: 4px 0;
+}
+
+[data-role=panel] ul li ul li:first-child {
+    margin-top: 4px;
+}
+
+[data-role=panel] ul li ul li a {
+    padding: 6px 0;
+}
+
+[data-role=panel] .menu-mark {
+    margin-left: 2px;
+    padding-left: 3px;
+}
+
+/* 10. Blog
+-----------------------------------------------------------------------------------------------------------*/
+
+/* 11. Contact
+-----------------------------------------------------------------------------------------------------------*/
+
+/* 12. Login
+-----------------------------------------------------------------------------------------------------------*/
+
+/* 13. Footer
+-----------------------------------------------------------------------------------------------------------*/
+
+.ui-collapsible-inset, .ui-collapsible-set {
+
+    padding: 6%;
+}
+
+/*.ui-content {
+    padding: 0;
+
+}*/
+
+.tabContent {
+    padding: 6%;
+}
+
+#intro {
+    width: 100%;
+    text-align: center;
+}
+
+.centerText {
+    text-align: center;
+}
+
+.heading {
+
+    border-bottom: 2px solid #222;
+    color: #222;
+    float: left;
+    margin: 2% 0 2%;
+    width: 100%;
+    padding-bottom: 10px;
+    padding-left: 3%;
+
+}
+
+.news-title a {
+
+    color: #222;
+
+}
+
+.typo {
+
+    height: 290px;
+}
+
+[data-role=page] .ui-content {
+    background-image: url("../img/blackCover.jpg");
+}
+
+.demo {
+
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    padding-top: 81px;
+    color: whitesmoke;
+    text-align: center;
+    position: relative;
+}
+
+.btnIcon {
+
+    width: 100%;
+    margin-top: 0;
+}
+
+.logo {
+
+    width: 82px;
+}
+
+.logo-small {
+    width: 16px;
+}
+
+.wrap {
+    color: #07728e;
+}
+
+@keyframes flickerAnimation { /* flame pulses */
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.animate-flicker {
+    opacity: 1;
+    animation: flickerAnimation 2s infinite;
+}
+
+#bars {
+    height: 30px;
+    left: 50%;
+    margin: -30px 0 0 -20px;
+    position: absolute;
+    top: 137px;
+    width: 40px;
+}
+
+.bar {
+    background: #0a71b3;
+    bottom: 1px;
+    height: 3px;
+    position: absolute;
+    width: 3px;
+    animation: sound 0ms -800ms linear infinite alternate;
+}
+
+.bar-number, .bar-title, .bar-value {
+    display: none;
+}
+
+@keyframes sound {
+    0% {
+        opacity: .35;
+        height: 3px;
+    }
+    100% {
+        opacity: 1;
+        height: 28px;
+    }
+}
+
+.bar:nth-child(1) {
+    left: 1px;
+    animation-duration: 474ms;
+}
+
+.bar:nth-child(2) {
+    left: 5px;
+    animation-duration: 433ms;
+}
+
+.bar:nth-child(3) {
+    left: 9px;
+    animation-duration: 407ms;
+}
+
+.bar:nth-child(4) {
+    left: 13px;
+    animation-duration: 458ms;
+}
+
+.bar:nth-child(5) {
+    left: 17px;
+    animation-duration: 400ms;
+}
+
+.bar:nth-child(6) {
+    left: 21px;
+    animation-duration: 427ms;
+}
+
+.bar:nth-child(7) {
+    left: 25px;
+    animation-duration: 441ms;
+}
+
+.bar:nth-child(8) {
+    left: 29px;
+    animation-duration: 419ms;
+}
+
+.bar:nth-child(9) {
+    left: 33px;
+    animation-duration: 487ms;
+}
+
+.bar:nth-child(10) {
+    left: 37px;
+    animation-duration: 442ms;
+}
+
+.wIcon {
+    width: 100%;
+}
+
+#temperature {
+     width: 48%;
+     float: right;
+ }
+
+#weatSum {
+    width: 48%;
+    float: left;
+}
+
+#weather {
+    width: 100%;
+    text-align: center;
+}
+
+.app{
+   /* background-image: none;*/
+    background-color: white;
+}
+
