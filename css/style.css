@@ -674,7 +674,7 @@ div.ui-page.ui-page-theme-a.ui-page-header-fixed.ui-page-active {
         opacity: 1;
     }
     50% {
-        opacity: 0.8;
+        opacity: 0.5;
     }
     100% {
         opacity: 1;
