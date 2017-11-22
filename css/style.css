@@ -2,30 +2,21 @@
 * STYLE.CSS
 *
 * Main theme file.
-*
-* Version 1.0
-*
-*/
-/*-----------------------------------------------------------------------------------------------------------
-[Table of contents]
-
-1. Globals and typography
-2. jQuery Mobile UI styling
-3. Tables
-4. Common Classes
-5. Header
-6. Sliders
-7. Sidebar
-8. Blog
-9. Works
-10. Widgets
-11. Footer
 
 -----------------------------------------------------------------------------------------------------------*/
 /* 1. Globals and typography
 -----------------------------------------------------------------------------------------------------------*/
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+    background-color: #fff;
+
+}
+.ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper{
+    text-shadow: none !important;
+}
+.ui-page-theme-a .ui-btn, html .ui-bar-a .ui-btn, html .ui-body-a .ui-btn, html body .ui-group-theme-a .ui-btn, html head+body .ui-btn.ui-btn-a, .ui-page-theme-a .ui-btn:visited, html .ui-bar-a .ui-btn:visited, html .ui-body-a .ui-btn:visited, html body .ui-group-theme-a .ui-btn:visited, html head+body .ui-btn.ui-btn-a:visited{
+    border-color: #5cbef2;
 }
 
 [data-role=page] .ui-icon-carat-r:after {
@@ -636,7 +627,8 @@ div.ui-page.ui-page-theme-a.ui-page-header-fixed.ui-page-active {
 }
 
 [data-role=page] .ui-content {
-    background-image: url("../img/blackCover.jpg");
+    //background-image: url("../img/blackCover.jpg");
+    background-color: #fff;
 }
 
 .demo {
@@ -666,7 +658,7 @@ div.ui-page.ui-page-theme-a.ui-page-header-fixed.ui-page-active {
 }
 
 .wrap {
-    color: #07728e;
+    color: #0a71b3;
 }
 
 @keyframes flickerAnimation { /* flame pulses */
@@ -773,14 +765,8 @@ div.ui-page.ui-page-theme-a.ui-page-header-fixed.ui-page-active {
     width: 100%;
 }
 
-#temperature {
-     width: 48%;
-     float: right;
- }
-
-#weatSum {
-    width: 48%;
-    float: left;
+#weather img{
+    width:100px;
 }
 
 #weather {
@@ -789,7 +775,7 @@ div.ui-page.ui-page-theme-a.ui-page-header-fixed.ui-page-active {
 }
 
 .app{
-   /* background-image: none;*/
+    /* background-image: none;*/
     background-color: white;
 }
 
@@ -810,4 +796,23 @@ div.ui-page.ui-page-theme-a.ui-page-header-fixed.ui-page-active {
     margin-bottom: 7%;
     border-bottom: 1px solid;
     border-color: #3f90c3;
+    padding-bottom: 15px;
+}
+.font{
+    color: #0a71b3;
+}
+.font-bold{
+    font-weight: bolder;
+}
+.text-center{
+    text-align: center;
+}
+.text-border{
+    padding-bottom: 5px;
+    border-bottom: 3px solid #0a71b3;
+    display: table;
+    margin: 15px auto 25px;
+}
+.clearfix{
+    clear:both;
 }
