@@ -624,11 +624,15 @@ div.ui-page.ui-page-theme-a.ui-page-header-fixed.ui-page-active {
 .typo {
 
     height: 290px;
+    background: #fff; /* For browsers that do not support gradients */
+    background: -webkit-radial-gradient(circle, #add7e8, #f9f9f9, #f9f9f9); /* Safari */
+    background: -o-radial-gradient(circle, #add7e8, #f9f9f9, #f9f9f9); /* Opera 11.6 to 12.0 */
+    background: -moz-radial-gradient(circle, #add7e8, #f9f9f9, #f9f9f9); /* Firefox 3.6 to 15 */
+    background: radial-gradient(circle, #add7e8, #f9f9f9, #f9f9f9); /* Standard syntax */
 }
 
 [data-role=page] .ui-content {
-    //background-image: url("../img/blackCover.jpg");
-    /*    background-color: #fff;*/
+
 }
 
 .demo {
@@ -816,3 +820,4 @@ div.ui-page.ui-page-theme-a.ui-page-header-fixed.ui-page-active {
 .clearfix{
     clear:both;
 }
+

@@ -55,13 +55,14 @@
                     }
                 });
                 // local storage getters
-                $('.typewrite').attr('data-type', localStorage.getItem('typewrite'));
-                $('.header-title').html(localStorage.getItem('header-title'));
-                
+
+
             });
             $(document).on("pagechange", "#body", function (e, f) {
                 var page_id = f.toPage[0].id;
                 console.log(page_id);
+                $('.typewrite').attr('data-type', localStorage.getItem('typewrite'));
+                $('.header-title').html(localStorage.getItem('header-title'));
                 var msg = new SpeechSynthesisUtterance(localStorage.getItem('typewrite'));
                 //window.speechSynthesis.speak(msg);
             });
@@ -96,10 +97,7 @@
                 </li>
             </ul>
 
-            <div id="news">
 
-
-            </div>
 
         </div>
         <div data-role="page" id="home">
@@ -182,7 +180,7 @@
                                                 </div>-->
                         <p class="">
                             <span class="typewrite" data-period="0"
-                                  data-type='[ "Hi, my name is Alexa, I am here to give some advice to protect against natural disasters, please choose the options below" ]'>
+                                  >
                                 <span class="wrap"></span>
                             </span>
                         </p>
@@ -249,7 +247,7 @@
                                                 </div>-->
                         <p class="">
                             <span class="typewrite" data-period="0"
-                                  data-type='[ "Hi, my name is Alexa, I am here to give some advice to protect against natural disasters, please choose the options below" ]'>
+                                  >
                                 <span class="wrap"></span>
                             </span>
                         </p>
@@ -318,7 +316,7 @@
                                                 </div>-->
                         <p class="">
                             <span class="typewrite" data-period="0"
-                                  data-type='[ "Hi, my name is Alexa, I am here to give some advice to protect against natural disasters, please choose the options below" ]'>
+                                  >
                                 <span class="wrap"></span>
                             </span>
                         </p>
@@ -402,12 +400,25 @@
             </div>
 
             <div role="main" class="ui-content">
-
+                <div class="typo">
+                    <div class="demo">
+                        <img class="logo animate-flicker" src="img/logo.png"/><br/>
+                        <p class="">
+                            <span class="typewrite" data-period="0"
+                                  data-type=''>
+                                <span class="wrap font"></span>
+                            </span>
+                        </p>
+                    </div>
+                </div>
                 <br>
                 <br>
 
-                <h3 class="font"><i class="fa fa-map-marker"></i> Recent News</h3>
+                <h3 class="text-center font text-border"><i class="fa fa-newspaper-o"></i> Recent News</h3>
+                <div id="news">
 
+
+                </div>
 
 
             </div>
