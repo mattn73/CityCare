@@ -105,17 +105,12 @@ function onSuccess(position) {
             }).addTo(mymap).bindPopup("You are here.");
 
 
-            var marker = L.marker([-20.135462, 57.524831]).addTo(mymap).bindPopup("Le Hochet Social Welfare Centre, Dr Manilall Rd Terre Rouge .");
 
-            var geo = JSON.parse(localStorage.getItem('shelters'));
 
-            for (var i = 0; i < geo.shelters.length; i++) {
 
-                L.marker([geo.shelters[i].latitude, geo.shelters[i].longitude]).addTo(mymap).bindPopup(geo.shelters[i].addr);
 
-            }
 
-            var mapName = L.map('shelterMapid').setView([position.coords.latitude, position.coords.longitude], 12);
+            var mapName = L.map('shelterMapid').setView([position.coords.latitude, position.coords.longitude], 10);
             L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoicmltaTg4IiwiYSI6ImNqYTVha2ZsZTltanUzM3F0bjV1a2k3ZW8ifQ.3ZYBWHzXLzQfzJR6V11g-Q', {
                 attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery � <a href="http://mapbox.com">Mapbox</a>',
                 maxZoom: 18,
@@ -175,8 +170,6 @@ function onSuccess(position) {
 
 
             });
-
-
             $.ajax({
 
                 type: 'get',
@@ -214,7 +207,6 @@ function onSuccess(position) {
                 }
 
             });
-
             $.ajax({
                 type: 'get',
                 url: "https://newsapi.org/v2/top-headlines?q=cyclone&sources=abc-news,the-irish-times&apiKey=86d903bb5559418b85bcb50ff607e0f8",
@@ -251,27 +243,6 @@ function onSuccess(position) {
 
             });
 
-            /* $(document).on("pagechange", "#body", function (e, f) {
-             var page_id = f.toPage[0].id;
-             if (page_id == "emergency-shelters") {*/
-          /*  var mapName = L.map('shelterMapid').setView([position.coords.latitude, position.coords.longitude], 10);
-            L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoicmltaTg4IiwiYSI6ImNqYTVha2ZsZTltanUzM3F0bjV1a2k3ZW8ifQ.3ZYBWHzXLzQfzJR6V11g-Q', {
-                attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery � <a href="http://mapbox.com">Mapbox</a>',
-                maxZoom: 18,
-                id: 'mapbox.streets',
-                accessToken: 'pk.eyJ1IjoicmltaTg4IiwiYSI6ImNqYTVha2ZsZTltanUzM3F0bjV1a2k3ZW8ifQ.3ZYBWHzXLzQfzJR6V11g-Q'
-            }).addTo(mapName);
-
-            var geo = JSON.parse(localStorage.getItem('shelters'));
-
-            for (var i = 0; i < geo.shelters.length; i++) {
-
-                L.marker([geo.shelters[i].latitude, geo.shelters[i].longitude]).addTo(mapName).bindPopup(geo.shelters[i].addr);
-
-
-            }*/
-            /*  }
-             });*/
 
 
         }
