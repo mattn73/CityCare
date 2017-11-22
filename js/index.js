@@ -118,7 +118,7 @@ function onSuccess(position) {
 
                 if (result.articles[i].title != null && result.articles[i].description != null && result.articles[i].publishedAt != null && result.articles[i].url != null && result.articles[i].urlToImage != null
                 ) {
-
+                    var date = moment(result.articles[i].publishedAt);
 
                     string = string + '<div class="article">';
                     string = string + '<p><img width="100%" class="centerElement" src="' + result.articles[i].urlToImage + '"></p>';
@@ -127,7 +127,7 @@ function onSuccess(position) {
 
                     string = string + '<p> ' + result.articles[i].description + '</p>';
 
-                    string = string + '<p><small><b>' + result.articles[i].publishedAt + '</b></small></p>';
+                    string = string + '<p><small><b>' +  date.format("dddd, MMMM Do YYYY, h:mm:ss a") + '</b></small></p>';
 
                     string = string + '<p><a href="' + result.articles[i].url + '" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-mini">more</a></p>';
 
@@ -159,7 +159,7 @@ function onSuccess(position) {
                 if (result.articles[i].title != null && result.articles[i].description != null && result.articles[i].publishedAt != null && result.articles[i].url != null && result.articles[i].urlToImage != null
                 ) {
 
-
+                    var date = moment(result.articles[i].publishedAt);
                     string = string + '<div class="article">';
                     string = string + '<p><img width="100%" class="centerElement" src="' + result.articles[i].urlToImage + '"></p>';
 
@@ -167,7 +167,7 @@ function onSuccess(position) {
 
                     string = string + '<p> ' + result.articles[i].description + '</p>';
 
-                    string = string + '<p><small><b>' + result.articles[i].publishedAt + '</b></small></p>';
+                    string = string + '<p><small><b>' + date.format("dddd, MMMM Do YYYY, h:mm:ss a") + '</b></small></p>';
 
                     string = string + '<p><a href="' + result.articles[i].url + '" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-mini">more</a></p>';
 
@@ -204,7 +204,7 @@ function onSuccess(position) {
 
      string = string + '<p> ' + result.articles[i].description + '</p>';
 
-     string = string + '<p><small><b>' + moment().format("dddd, MMMM Do YYYY, h:mm:ss a"); + '</b></small></p>';
+     string = string + '<p><small><b>' + date.format("dddd, MMMM Do YYYY, h:mm:ss a") + '</b></small></p>';
 
      string = string + '<p><a href="' + result.articles[i].url + '" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-mini">more</a></p>';
 
