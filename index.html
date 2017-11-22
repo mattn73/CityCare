@@ -20,7 +20,6 @@
         <link rel="stylesheet" href="css/jquery.mobile.icons.min.css"/>
         <link rel="stylesheet" href="css/fonts.css"/>
         <link rel="stylesheet" href="css/style.css"/>
-        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900,300italic,400italic,600italic,700italic|Oswald:400,700' rel='stylesheet' type='text/css'>
         <script type="text/javascript" src="js/moment.min.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
@@ -32,6 +31,7 @@
 
         <script type="text/javascript">
             app.initialize();
+             localStorage.setItem('typewrite', '[ "Hi, my name is Alexa, I am here to give some advice to protect against natural disasters, please choose the options below" ]');
         </script>
         <script id="panel-init">
             $(function () {
@@ -51,6 +51,11 @@
                         }
                     }
                 });
+
+
+                //console.log(home);
+                //$('.demo').html(localStorage.getItem('typewrite'));
+                $('.typewrite').attr('data-type',localStorage.getItem('typewrite'))
             });
         </script>
 
@@ -98,62 +103,25 @@
                 <div class="typo">
                     <div class="demo">
                         <img class="logo animate-flicker" src="img/logo.png"/><br/>
-                        <!--                        <div id='bars'>
-                                                    <div class='bar'></div>
-                                                    <div class='bar'></div>
-                                                    <div class='bar'></div>
-                                                    <div class='bar'></div>
-                                                    <div class='bar'></div>
-                                                    <div class='bar'></div>
-                                                    <div class='bar'></div>
-                                                    <div class='bar'></div>
-                                                    <div class='bar'></div>
-                                                    <div class='bar'></div>
-                                                </div>-->
                         <p class="">
                             <span class="typewrite" data-period="0"
-                                  data-type='[ "Hi, my name is Alexa, I am here to give some advice to protect against natural disasters, please choose the options below" ]'>
+                                  data-type=''>
                                 <span class="wrap font"></span>
                             </span>
                         </p>
-
-
                     </div>
-
                 </div>
-
-                <ul data-role="listview">
-                    <li><a href="#fire" class=""><i class="fa fa-fire"></i> Fire</a></li>
-                    <li><a href="#flood"><i class="fa fa-tint"></i> Flood</a></li>
-                    <li><a href="#cyclone"><i class="fa fa-superpowers"></i> Cyclone</a></li>
+                <ul data-role="listview" id="nav_menu">
+                    <li><a href="#fire" class="" id="fire"><i class="fa fa-fire"></i> Fire</a></li>
+                    <li><a href="#flood" id="flood"><i class="fa fa-tint"></i> Flood</a></li>
+                    <li><a href="#cyclone" id="cyclone"><i class="fa fa-superpowers"></i> Cyclone</a></li>
                 </ul>
-
                 <div class="app">
-
                     <div id="deviceready" class="blink">
-
-                        <!--                        <h3>Weather</h3>
-                        
-                                                <div id="weather">
-                                                    <div id="weatSum">
-                                                        <img src="img/weatherLoader.gif" class="wIcon" id="weatherIcon"/>
-                                                        <label id="weatherText">Loading</label>
-                                                    </div>
-                        
-                                                    <div id="temperature">
-                                                        <img src="img/weatherLoader.gif" class="wIcon" id="tempIcon"/>
-                                                        <label id="tempText">Loading</label>
-                                                    </div>
-                        
-                                                </div>-->
-
-                        <!--                        <h3>Map</h3>
-                                                <div id="mapid"></div>-->
                     </div>
                 </div>
                 <div class="clearfix">&nbsp;</div>
                 <h3 class="text-center font text-border">Weather</h3>
-
                 <div id="weather">
                     <div id="weatSum">
                         <img src="img/weatherLoader.gif" class="wIcon" id="weatherIcon"/>
@@ -164,10 +132,7 @@
                         <img src="img/weatherLoader.gif" class="wIcon" id="tempIcon"/>
                         <label id="tempText" class="font"><strong>Loading</strong></label>
                     </div>
-
                 </div>
-
-
             </div>
             <div data-role="footer" data-position="fixed" data-tap-toggle="false" class="jqm-footer">
                 <div data-role="navbar" class="custom-icons" data-grid="c" data-position="fixed">
