@@ -57,12 +57,13 @@
                 // local storage getters
                 $('.typewrite').attr('data-type', localStorage.getItem('typewrite'));
                 $('.header-title').html(localStorage.getItem('header-title'));
-                var msg = new SpeechSynthesisUtterance(localStorage.getItem('typewrite'));
-                window.speechSynthesis.speak(msg);
+                
             });
-            $(document).on("pagechange", "#body", function (e,f) {
+            $(document).on("pagechange", "#body", function (e, f) {
                 var page_id = f.toPage[0].id;
                 console.log(page_id);
+                var msg = new SpeechSynthesisUtterance(localStorage.getItem('typewrite'));
+                //window.speechSynthesis.speak(msg);
             });
         </script>
 
@@ -434,16 +435,52 @@
             </div>
 
             <div role="main" class="ui-content">
-
+                <div class="typo">
+                    <div class="demo">
+                        <img class="logo animate-flicker" src="img/logo.png"/><br/>
+                        <p class="">
+                            <span class="typewrite" data-period="0"
+                                  data-type=''>
+                                <span class="wrap font"></span>
+                            </span>
+                        </p>
+                    </div>
+                </div>
                 <br>
                 <br>
 
-                <h3 class="font"><i class="fa fa-map-marker"></i> Emergency Shelters</h3>
-
-
-
+                <h3 class="text-center font text-border"><i class="fa fa-medkit" aria-hidden="true"></i> Emergency Shelters by Regions</h3>
+                <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" style="padding:0">
+                    <h4>North</h4>
+                    <ul data-role="listview" data-inset="false">
+                        <li>map</li>
+                    </ul>
+                </div>
+                <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" style="padding:0">
+                    <h4>South</h4>
+                    <ul data-role="listview" data-inset="false">
+                        <li>map</li>
+                    </ul>
+                </div>
+                <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" style="padding:0">
+                    <h4>East</h4>
+                    <ul data-role="listview" data-inset="false">
+                        <li>map</li>
+                    </ul>
+                </div>
+                <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" style="padding:0">
+                    <h4>West</h4>
+                    <ul data-role="listview" data-inset="false">
+                        <li>map</li>
+                    </ul>
+                </div>
+                <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" style="padding:0">
+                    <h4>Center</h4>
+                    <ul data-role="listview" data-inset="false">
+                        <li>map</li>
+                    </ul>
+                </div>
             </div>
-
             <div data-role="footer" data-position="fixed" data-tap-toggle="false" class="jqm-footer">
                 <div data-role="navbar" class="custom-icons" data-grid="c" data-position="fixed">
                     <ul id="footer-nav">
@@ -458,6 +495,7 @@
 
 
             </div>
+
         </div><!-- /page -->
 
         <script>

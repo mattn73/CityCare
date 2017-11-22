@@ -19,7 +19,7 @@ body {
     border-color: #5cbef2;
 }
 
-[data-role=page] .ui-icon-carat-r:after {
+[data-role=page] .ui-icon-carat-r:after,.ui-nosvg .ui-icon-carat-d:after,.ui-nosvg .ui-icon-carat-u:after {
 
     background-color: #0a71b3;
 }
@@ -628,7 +628,7 @@ div.ui-page.ui-page-theme-a.ui-page-header-fixed.ui-page-active {
 
 [data-role=page] .ui-content {
     //background-image: url("../img/blackCover.jpg");
-/*    background-color: #fff;*/
+    /*    background-color: #fff;*/
 }
 
 .demo {
