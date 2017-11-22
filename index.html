@@ -35,6 +35,7 @@
             // local storage setters
             localStorage.setItem('typewrite', '[ "Hi, my name is Alexa, I am here to give some advice to protect against natural disasters, please choose the options below" ]');
             localStorage.setItem('header-title', '<img class="logo-small" src="img/logo.png"/> CITYCARE');
+            localStorage.setItem('shelters', '{"shelters":[{"addr":"Camp Yoloff Community Centre, Route Militaire","latitude":"-20.127760","longitude":"57.533300"},{"addr":"Cité Gabriel Martial Community Centre, Route Militaire","latitude":"-20.127669","longitude":"57.533257"},{"addr":"Vallée des Prêtres Co-operative Credit Centre Complex, Vallee des Prêtres","latitude":"-20.157941","longitude":"57.531373"},{"addr":"Mont Roches Social Welfare Centre, Royal Rd Mont Roches","atitude":"-20.283130","longitude":"57.504340"},{"addr":"S. Murday SSS (Vocational), Marcel Cabon St Stanley R. Hill","atitude":"-20.224233","longitude":"57.459648"}]}');
         </script>
         <script id="panel-init">
             $(function () {
@@ -57,6 +58,7 @@
                 // local storage getters
 
 
+
             });
             $(document).on("pagechange", "#body", function (e, f) {
                 var page_id = f.toPage[0].id;
@@ -65,6 +67,9 @@
                 $('.header-title').html(localStorage.getItem('header-title'));
                 var msg = new SpeechSynthesisUtterance(localStorage.getItem('typewrite'));
                 //window.speechSynthesis.speak(msg);
+                var geo =  JSON.parse(localStorage.getItem('shelters'));
+                console.log(geo);
+
             });
         </script>
 
@@ -422,7 +427,6 @@
 
 
             </div>
-
             <div data-role="footer" data-position="fixed" data-tap-toggle="false" class="jqm-footer">
                 <div data-role="navbar" class="custom-icons" data-grid="c" data-position="fixed">
                     <ul id="footer-nav">
@@ -434,8 +438,6 @@
                         <li><a href="#mylocation" id="star"><span class="fa   fa-map-marker"></span></a></li>
                     </ul>
                 </div>
-
-
             </div>
         </div><!-- /page -->
         <div data-role="page" id="emergency-shelters">
@@ -463,8 +465,9 @@
                 <h3 class="text-center font text-border"><i class="fa fa-medkit" aria-hidden="true"></i> Emergency Shelters by Regions</h3>
                 <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" style="padding:0">
                     <h4>North</h4>
-                    <ul data-role="listview" data-inset="false">
-                        <li>map</li>
+                    <ul data-role="listview">
+                        <li><a href="#shelters-map">Camp Yoloff Community Centre, Route Militaire</a></li>
+                        <li><a href="#shelters-map">Cité Gabriel Martial Community Centre, Route Militaire</a></li>
                     </ul>
                 </div>
                 <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" style="padding:0">
