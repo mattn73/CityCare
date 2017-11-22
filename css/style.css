@@ -19,7 +19,11 @@ body {
     border-color: #5cbef2;
 }
 
-[data-role=page] .ui-icon-carat-r:after,.ui-nosvg .ui-icon-carat-d:after,.ui-nosvg .ui-icon-carat-u:after {
+[data-role=page] .ui-icon-carat-r:after,
+.ui-nosvg .ui-icon-carat-d:after,
+.ui-nosvg .ui-icon-carat-u:after,
+.ui-nosvg .ui-icon-minus:after,
+.ui-nosvg .ui-icon-plus:after{
 
     background-color: #0a71b3;
 }
@@ -821,3 +825,10 @@ div.ui-page.ui-page-theme-a.ui-page-header-fixed.ui-page-active {
     clear:both;
 }
 
+.ui-collapsible-inset, .ui-collapsible-set{
+    padding:0;
+}
+ul{
+    padding: 10px;
+    list-style-type: decimal;
+}
