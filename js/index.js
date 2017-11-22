@@ -93,24 +93,35 @@ function onSuccess(position) {
                 accessToken: 'pk.eyJ1IjoicmltaTg4IiwiYSI6ImNqYTVha2ZsZTltanUzM3F0bjV1a2k3ZW8ifQ.3ZYBWHzXLzQfzJR6V11g-Q'
             }).addTo(mymap);
             //var marker = L.marker([position.coords.latitude, position.coords.longitude]).addTo(mymap);
+            /*    var LeafIcon = L.Icon.extend({
+             options: {
+             iconSize: [38, 95],
+             iconAnchor: [22, 94],
+             popupAnchor: [-3, -76]
+             }
+             });
+             var greenIcon = new LeafIcon({iconUrl: 'img/logo.png'});*/
+
             var circle = L.circle([position.coords.latitude, position.coords.longitude], {
                 color: 'red',
                 fillColor: '#f03',
                 fillOpacity: 0.5,
                 radius: 500
-            }).addTo(mymap);
+            }).addTo(mymap).bindPopup("You are here.");
+
+            //var polygon = L.polygon([-20.135462,57.524831]).addTo(map).bindPopup("I am a Test.");
+            //L.marker([-20.135462, 57.524831], {icon: greenIcon}).addTo(mymap).bindPopup("I am a green leaf.");
+            var marker = L.marker([-20.135462, 57.524831]).addTo(mymap).bindPopup("Le Hochet Social Welfare Centre, Dr Manilall Rd Terre Rouge .");
         }
     });
 
     var string = "";
-    console.log(string);
 
-    console.log(string);
 
     $.ajax({
+        type: 'get',
 
-
-        url: "https://newsapi.org/v2/top-headlines?q=fire&sources=abc-news,the-irish-times&apiKey=86d903bb5559418b85bcb50ff607e0f8",
+        url: "https://newsapi.org/v2/top-headlines?q=disaster&apiKey=86d903bb5559418b85bcb50ff607e0f8",
         success: function (result) {
 
 
@@ -127,7 +138,7 @@ function onSuccess(position) {
 
                     string = string + '<p> ' + result.articles[i].description + '</p>';
 
-                    string = string + '<p><small><b>' +  date.format("dddd, MMMM Do YYYY, h:mm:ss a") + '</b></small></p>';
+                    string = string + '<p><small><b>' + date.format("dddd, MMMM Do YYYY, h:mm:ss a") + '</b></small></p>';
 
                     string = string + '<p><a href="' + result.articles[i].url + '" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-mini">more</a></p>';
 
@@ -138,18 +149,18 @@ function onSuccess(position) {
 
 
             }
-            console.log(string);
+
 
             $("#news").html(string);
         }
 
 
     });
-    string = "";
-    console.log(string);
+
+
     $.ajax({
 
-
+        type: 'get',
         url: "https://newsapi.org/v2/top-headlines?q=flood&sources=abc-news,the-irish-times&apiKey=86d903bb5559418b85bcb50ff607e0f8",
         success: function (result) {
 
@@ -178,49 +189,75 @@ function onSuccess(position) {
 
 
             }
-            console.log(string);
+
 
             $("#news").append(string);
         }
 
     });
 
-     $.ajax({
+    $.ajax({
+        type: 'get',
+        url: "https://newsapi.org/v2/top-headlines?q=cyclone&sources=abc-news,the-irish-times&apiKey=86d903bb5559418b85bcb50ff607e0f8",
+        success: function (result) {
 
-     url: "https://newsapi.org/v2/top-headlines?q=cyclone&sources=abc-news,the-irish-times&apiKey=86d903bb5559418b85bcb50ff607e0f8",
-     success: function (result) {
+            string = "";
+            for (var i = 0; i < result.articles.length; i++) {
 
-         string = "";
-     for (var i = 0; i < result.articles.length; i++) {
+                if (result.articles[i].title != null && result.articles[i].description != null && result.articles[i].publishedAt != null && result.articles[i].url != null && result.articles[i].urlToImage != null
+                ) {
 
-     if (result.articles[i].title != null && result.articles[i].description != null && result.articles[i].publishedAt != null && result.articles[i].url != null && result.articles[i].urlToImage != null
-     ) {
+                    var date = moment(result.articles[i].publishedAt);
+                    string = string + '<div class="article">';
+                    string = string + '<p><img width="100%" class="centerElement" src="' + result.articles[i].urlToImage + '"></p>';
 
-    var date = moment(result.articles[i].publishedAt);
-     string = string + '<div class="article">';
-     string = string + '<p><img width="100%" class="centerElement" src="' + result.articles[i].urlToImage + '"></p>';
+                    string = string + '<h2>' + result.articles[i].title + '</h2>';
 
-     string = string + '<h2>' + result.articles[i].title + '</h2>';
+                    string = string + '<p> ' + result.articles[i].description + '</p>';
 
-     string = string + '<p> ' + result.articles[i].description + '</p>';
+                    string = string + '<p><small><b>' + date.format("dddd, MMMM Do YYYY, h:mm:ss a") + '</b></small></p>';
 
-     string = string + '<p><small><b>' + date.format("dddd, MMMM Do YYYY, h:mm:ss a") + '</b></small></p>';
+                    string = string + '<p><a href="' + result.articles[i].url + '" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-mini">more</a></p>';
 
-     string = string + '<p><a href="' + result.articles[i].url + '" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-mini">more</a></p>';
-
-     string = string + '    </div>';
-
-
-     }
+                    string = string + '    </div>';
 
 
-     }
-     $("#news").append(string);
-     }
+                }
 
 
-     });
-    console.log(string);
+            }
+            $("#news").append(string);
+        }
+
+
+    });
+
+    var northMap = L.map('mapNorthid').setView([position.coords.latitude, position.coords.longitude], 10);
+    loadMap(northMap);
+    L.marker([-20.135462, 57.524831]).addTo(mymap).bindPopup("Le Hochet Social Welfare Centre, Dr Manilall Rd Terre Rouge .");
+
+
+    /*south MAP MARKER*/
+    var southMap = L.map('maSouthId').setView([position.coords.latitude, position.coords.longitude], 10);
+    loadMap(southMap);
+    L.marker([-20.135462, 57.524831]).addTo(mymap).bindPopup("Le Hochet Social Welfare Centre, Dr Manilall Rd Terre Rouge .");
+
+    /*EAST MAP MARKER*/
+    var eastMap = L.map('mapEastId').setView([position.coords.latitude, position.coords.longitude], 10);
+    loadMap(eastMap);
+    L.marker([-20.135462, 57.524831]).addTo(mymap).bindPopup("Le Hochet Social Welfare Centre, Dr Manilall Rd Terre Rouge .");
+
+    /*WEST MAP MARKER*/
+    var westMap = L.map('mapWestId').setView([position.coords.latitude, position.coords.longitude], 10);
+    loadMap(westMap);
+    L.marker([-20.135462, 57.524831]).addTo(mymap).bindPopup("Le Hochet Social Welfare Centre, Dr Manilall Rd Terre Rouge .");
+
+    /*Center MAP MARKER*/
+    var CenterMap = L.map('mapCenterId').setView([position.coords.latitude, position.coords.longitude], 10);
+    loadMap(CenterMap);
+    L.marker([-20.135462, 57.524831]).addTo(mymap).bindPopup("Le Hochet Social Welfare Centre, Dr Manilall Rd Terre Rouge .");
+
+
 
 }
 function onError(error) {
@@ -229,7 +266,21 @@ function onError(error) {
 }
 
 
-
-
-
 init();
+
+function loadMap(mapName) {
+
+
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoicmltaTg4IiwiYSI6ImNqYTVha2ZsZTltanUzM3F0bjV1a2k3ZW8ifQ.3ZYBWHzXLzQfzJR6V11g-Q', {
+        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery � <a href="http://mapbox.com">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox.streets',
+        accessToken: 'pk.eyJ1IjoicmltaTg4IiwiYSI6ImNqYTVha2ZsZTltanUzM3F0bjV1a2k3ZW8ifQ.3ZYBWHzXLzQfzJR6V11g-Q'
+    }).addTo(mapName);
+
+    L.marker([-20.135462, 57.524831]).addTo(mymap).bindPopup("Le Hochet Social Welfare Centre, Dr Manilall Rd Terre Rouge .");
+
+
+
+
+}
