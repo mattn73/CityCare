@@ -60,6 +60,10 @@
                 var msg = new SpeechSynthesisUtterance(localStorage.getItem('typewrite'));
                 window.speechSynthesis.speak(msg);
             });
+            $(document).on("pagechange", "#body", function (e,f) {
+                var page_id = f.toPage[0].id;
+                console.log(page_id);
+            });
         </script>
 
         <style>
@@ -74,7 +78,7 @@
         <script src="js/moment.min.js"></script>
 
     </head>
-    <body>
+    <body id="body">
 
         <div data-role="panel" id="right-panel" data-position="right" data-display="push" data-theme="a">
             <ul data-role="listview" id="sideMenu">
