@@ -103,50 +103,125 @@ function onSuccess(position) {
     });
 
     var string = "";
-    $.ajax({
+    console.log(string);
 
-
-        url: "https://newsapi.org/v2/everything?q=fire&apiKey=86d903bb5559418b85bcb50ff607e0f8",
-        success: function (result) {
-
-
-            string = string + newsGenerate(result);
-
-
-        }
-
-
-    })
+    console.log(string);
 
     $.ajax({
 
 
-        url: "https://newsapi.org/v2/everything?q=flood&apiKey=86d903bb5559418b85bcb50ff607e0f8",
+        url: "https://newsapi.org/v2/top-headlines?q=fire&sources=abc-news,the-irish-times&apiKey=86d903bb5559418b85bcb50ff607e0f8",
         success: function (result) {
 
 
-            string = string + newsGenerate(result);
+            for (var i = 0; i < result.articles.length; i++) {
+
+                if (result.articles[i].title != null && result.articles[i].description != null && result.articles[i].publishedAt != null && result.articles[i].url != null && result.articles[i].urlToImage != null
+                ) {
 
 
+                    string = string + '<div class="article">';
+                    string = string + '<p><img width="100%" class="centerElement" src="' + result.articles[i].urlToImage + '"></p>';
+
+                    string = string + '<h2>' + result.articles[i].title + '</h2>';
+
+                    string = string + '<p> ' + result.articles[i].description + '</p>';
+
+                    string = string + '<p><small><b>' + result.articles[i].publishedAt + '</b></small></p>';
+
+                    string = string + '<p><a href="' + result.articles[i].url + '" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-mini">more</a></p>';
+
+                    string = string + '    </div>';
+
+
+                }
+
+
+            }
+            console.log(string);
+
+            $("#news").html(string);
         }
 
 
-    })
+    });
+    string = "";
+    console.log(string);
     $.ajax({
 
 
-        url: "https://newsapi.org/v2/everything?q=cyclone&apiKey=86d903bb5559418b85bcb50ff607e0f8",
+        url: "https://newsapi.org/v2/top-headlines?q=flood&sources=abc-news,the-irish-times&apiKey=86d903bb5559418b85bcb50ff607e0f8",
         success: function (result) {
 
+            string = "";
+            for (var i = 0; i < result.articles.length; i++) {
 
-            string = string + newsGenerate(result);
+                if (result.articles[i].title != null && result.articles[i].description != null && result.articles[i].publishedAt != null && result.articles[i].url != null && result.articles[i].urlToImage != null
+                ) {
 
 
+                    string = string + '<div class="article">';
+                    string = string + '<p><img width="100%" class="centerElement" src="' + result.articles[i].urlToImage + '"></p>';
+
+                    string = string + '<h2>' + result.articles[i].title + '</h2>';
+
+                    string = string + '<p> ' + result.articles[i].description + '</p>';
+
+                    string = string + '<p><small><b>' + result.articles[i].publishedAt + '</b></small></p>';
+
+                    string = string + '<p><a href="' + result.articles[i].url + '" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-mini">more</a></p>';
+
+                    string = string + '    </div>';
+
+
+                }
+
+
+            }
+            console.log(string);
+
+            $("#news").append(string);
         }
 
+    });
 
-    })
-    $("#news").html(string);
+     $.ajax({
+
+     url: "https://newsapi.org/v2/top-headlines?q=cyclone&sources=abc-news,the-irish-times&apiKey=86d903bb5559418b85bcb50ff607e0f8",
+     success: function (result) {
+
+         string = "";
+     for (var i = 0; i < result.articles.length; i++) {
+
+     if (result.articles[i].title != null && result.articles[i].description != null && result.articles[i].publishedAt != null && result.articles[i].url != null && result.articles[i].urlToImage != null
+     ) {
+
+
+     string = string + '<div class="article">';
+     string = string + '<p><img width="100%" class="centerElement" src="' + result.articles[i].urlToImage + '"></p>';
+
+     string = string + '<h2>' + result.articles[i].title + '</h2>';
+
+     string = string + '<p> ' + result.articles[i].description + '</p>';
+
+     string = string + '<p><small><b>' + result.articles[i].publishedAt + '</b></small></p>';
+
+     string = string + '<p><a href="' + result.articles[i].url + '" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-mini">more</a></p>';
+
+     string = string + '    </div>';
+
+
+     }
+
+
+     }
+     $("#news").append(string);
+     }
+
+
+     });
+    console.log(string);
+
 }
 function onError(error) {
     alert('code: ' + error.code + '\n' +
@@ -155,35 +230,6 @@ function onError(error) {
 
 
 
-function newsGenerate(result) {
 
-    var strings = "";
-    for (var i = 0; i < result.articles.length; i++) {
-
-        if (result.articles[i].title != null && result.articles[i].description != null && result.articles[i].publishedAt != null && result.articles[i].url != null && result.articles[i].urlToImage != null
-        ) {
-
-
-            strings = strings + '<div class="article">';
-            strings = strings + '<p><img width="100%" class="centerElement" src="' + result.articles[i].urlToImage + '"></p>';
-
-            strings = strings + '<h2>' + result.articles[i].title + '</h2>';
-
-            strings= strings + '<p> ' + result.articles[i].description + '</p>';
-
-            strings = strings + '<p><small><b>' + result.articles[i].publishedAt + '</b></small></p>';
-
-            strings = strings + '<p><a href="' + result.articles[i].url + '" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-mini">more</a></p>';
-
-            strings = strings + '    </div>';
-
-
-        }
-    }
-
-    return strings;
-
-
-}
 
 init();
