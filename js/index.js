@@ -53,36 +53,35 @@ function init() {
     navigator.geolocation.getCurrentPosition(onSuccess, onError);
 }
 function onSuccess(position) {
-   /* alert('Latitude: ' + position.coords.latitude + '\n' +
-            'Longitude: ' + position.coords.longitude + '\n' +
-            'Altitude: ' + position.coords.altitude + '\n' +
-            'Accuracy: ' + position.coords.accuracy + '\n' +
-            'Altitude Accuracy: ' + position.coords.altitudeAccuracy + '\n' +
-            'Heading: ' + position.coords.heading + '\n' +
-            'Speed: ' + position.coords.speed + '\n' +
-            'Timestamp: ' + position.timestamp + '\n');
-*/
-    $.ajax({dataType: "jsonp",
+    /* alert('Latitude: ' + position.coords.latitude + '\n' +
+     'Longitude: ' + position.coords.longitude + '\n' +
+     'Altitude: ' + position.coords.altitude + '\n' +
+     'Accuracy: ' + position.coords.accuracy + '\n' +
+     'Altitude Accuracy: ' + position.coords.altitudeAccuracy + '\n' +
+     'Heading: ' + position.coords.heading + '\n' +
+     'Speed: ' + position.coords.speed + '\n' +
+     'Timestamp: ' + position.timestamp + '\n');
+     */
+    $.ajax({
+        dataType: "jsonp",
         url: "https://api.darksky.net/forecast/4753bec9e74d19cf56d1db0223619337/" + position.coords.latitude + ',' + position.coords.longitude + "?units=si",
         success: function (result) {
 
-          //  $("#weather").text('Summary: ' + result.currently.summary + ', Icon: ' + result.currently.icon + ', Temperature: ' + result.currently.temperature);
+            //  $("#weather").text('Summary: ' + result.currently.summary + ', Icon: ' + result.currently.icon + ', Temperature: ' + result.currently.temperature);
 
 
-            $("#weatherIcon").attr("src",'img/weatherIcons/' + result.currently.icon+'.png');
-            $("#weatherText").text( result.currently.summary);
-            $("#tempText").text(result.currently.temperature );
+            $("#weatherIcon").attr("src", 'img/weatherIcons/' + result.currently.icon + '.png');
+            $("#weatherText").text(result.currently.summary);
+            $("#tempText").text(result.currently.temperature);
 
-            if(result.currently.temperature < 15.0){
+            if (result.currently.temperature < 15.0) {
 
-                $("#tempIcon").attr("src","second.jpg");
+                $("#tempIcon").attr("src", "second.jpg");
 
-            }else  {
+            } else {
 
-                $("#tempIcon").attr("src","img/weatherIcons/high.png");
+                $("#tempIcon").attr("src", "img/weatherIcons/high.png");
             }
-
-
 
 
             var mymap = L.map('mapid').setView([position.coords.latitude, position.coords.longitude], 12);
@@ -102,11 +101,89 @@ function onSuccess(position) {
             }).addTo(mymap);
         }
     });
+
+    var string = "";
+    $.ajax({
+
+
+        url: "https://newsapi.org/v2/everything?q=fire&apiKey=86d903bb5559418b85bcb50ff607e0f8",
+        success: function (result) {
+
+
+            string = string + newsGenerate(result);
+
+
+        }
+
+
+    })
+
+    $.ajax({
+
+
+        url: "https://newsapi.org/v2/everything?q=flood&apiKey=86d903bb5559418b85bcb50ff607e0f8",
+        success: function (result) {
+
+
+            string = string + newsGenerate(result);
+
+
+        }
+
+
+    })
+    $.ajax({
+
+
+        url: "https://newsapi.org/v2/everything?q=cyclone&apiKey=86d903bb5559418b85bcb50ff607e0f8",
+        success: function (result) {
+
+
+            string = string + newsGenerate(result);
+
+
+        }
+
+
+    })
+    $("#news").html(string);
 }
 function onError(error) {
     alert('code: ' + error.code + '\n' +
-            'message: ' + error.message + '\n');
+        'message: ' + error.message + '\n');
 }
 
+
+
+function newsGenerate(result) {
+
+    var strings = "";
+    for (var i = 0; i < result.articles.length; i++) {
+
+        if (result.articles[i].title != null && result.articles[i].description != null && result.articles[i].publishedAt != null && result.articles[i].url != null && result.articles[i].urlToImage != null
+        ) {
+
+
+            strings = strings + '<div class="article">';
+            strings = strings + '<p><img width="100%" class="centerElement" src="' + result.articles[i].urlToImage + '"></p>';
+
+            strings = strings + '<h2>' + result.articles[i].title + '</h2>';
+
+            strings= strings + '<p> ' + result.articles[i].description + '</p>';
+
+            strings = strings + '<p><small><b>' + result.articles[i].publishedAt + '</b></small></p>';
+
+            strings = strings + '<p><a href="' + result.articles[i].url + '" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-mini">more</a></p>';
+
+            strings = strings + '    </div>';
+
+
+        }
+    }
+
+    return strings;
+
+
+}
 
 init();

@@ -793,3 +793,21 @@ div.ui-page.ui-page-theme-a.ui-page-header-fixed.ui-page-active {
     background-color: white;
 }
 
+.heading{
+
+    border-bottom: 2px solid #222;
+    color: #222;
+    float: left;
+    margin: 2% 0 2%;
+    width: 100%;
+    padding-bottom: 10px;
+    padding-left: 3%;
+
+}
+
+#sideMenu li{
+
+    margin-bottom: 7%;
+    border-bottom: 1px solid;
+    border-color: #3f90c3;
+}
