@@ -9,7 +9,7 @@
         <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
         <meta http-equiv="Content-Security-Policy"
               content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *"/>
-        <title>CITYCARE</title>
+        <title>CITYCARE Mobile Application</title>
 
         <!--        <link rel="stylesheet" type="text/css" href="css/index.css" />-->
         <link rel="stylesheet" type="text/css" href="css/leaflet.css"/>
@@ -31,7 +31,10 @@
 
         <script type="text/javascript">
             app.initialize();
+            
+            // local storage setters
              localStorage.setItem('typewrite', '[ "Hi, my name is Alexa, I am here to give some advice to protect against natural disasters, please choose the options below" ]');
+             localStorage.setItem('header-title','<img class="logo-small" src="img/logo.png"/> CITYCARE');
         </script>
         <script id="panel-init">
             $(function () {
@@ -51,11 +54,9 @@
                         }
                     }
                 });
-
-
-                //console.log(home);
-                //$('.demo').html(localStorage.getItem('typewrite'));
-                $('.typewrite').attr('data-type',localStorage.getItem('typewrite'))
+                // local storage getters
+                $('.typewrite').attr('data-type',localStorage.getItem('typewrite'));
+                $('.header-title').html(localStorage.getItem('header-title'));
             });
         </script>
 
@@ -96,7 +97,7 @@
         </div>
         <div data-role="page" id="home">
             <div id="nav" data-role="header" data-position="fixed" data-tap-toggle="false" class="jqm-header">
-                <h1 class="header-title"><img class="logo-small" src="img/logo.png"/> CITYCARE</h1>
+                <h1 class="header-title"> </h1>
                 <a data-role="none" href='#right-panel' id="sidebar-btn-right"></a>
             </div>
             <div role="main" class="ui-content">
@@ -152,7 +153,7 @@
         <div data-role="page" id="fire">
 
             <div id="nav" data-role="header" data-position="fixed" data-tap-toggle="false" class="jqm-header">
-                <h1 class="header-title"><img class="logo-small" src="img/logo.png"/> CITYCARE</h1>
+                <h1 class="header-title"> </h1>
                 <a data-role="none" href='#right-panel' id="sidebar-btn-right"></a>
             </div>
 
@@ -219,7 +220,7 @@
         <div data-role="page" id="flood">
 
             <div id="nav" data-role="header" data-position="fixed" data-tap-toggle="false" class="jqm-header">
-                <h1 class="header-title"><img class="logo-small" src="img/logo.png"/> CITYCARE</h1>
+                <h1 class="header-title"> </h1>
                 <a data-role="none" href='#right-panel' id="sidebar-btn-right"></a>
             </div>
 
@@ -288,7 +289,7 @@
         <div data-role="page" id="cyclone">
 
             <div id="nav" data-role="header" data-position="fixed" data-tap-toggle="false" class="jqm-header">
-                <h1 class="header-title"><img class="logo-small" src="img/logo.png"/> CITYCARE</h1>
+                <h1 class="header-title"> </h1>
                 <a data-role="none" href='#right-panel' id="sidebar-btn-right"></a>
             </div>
 
@@ -355,7 +356,7 @@
         <div data-role="page" id="mylocation">
 
             <div id="nav" data-role="header" data-position="fixed" data-tap-toggle="false" class="jqm-header">
-                <h1 class="header-title"><img class="logo-small" src="img/logo.png"/> CITYCARE</h1>
+                <h1 class="header-title"> </h1>
                 <a data-role="none" href='#right-panel' id="sidebar-btn-right"></a>
             </div>
 
@@ -389,7 +390,7 @@
         <div data-role="page" id="newsfeed">
 
             <div id="nav" data-role="header" data-position="fixed" data-tap-toggle="false" class="jqm-header">
-                <h1 class="header-title"><img class="logo-small" src="img/logo.png"/> CITYCARE</h1>
+                <h1 class="header-title"> </h1>
                 <a data-role="none" href='#right-panel' id="sidebar-btn-right"></a>
             </div>
 
@@ -422,7 +423,7 @@
         <div data-role="page" id="emergency-shelters">
 
             <div id="nav" data-role="header" data-position="fixed" data-tap-toggle="false" class="jqm-header">
-                <h1 class="header-title"><img class="logo-small" src="img/logo.png"/> CITYCARE</h1>
+                <h1 class="header-title"> </h1>
                 <a data-role="none" href='#right-panel' id="sidebar-btn-right"></a>
             </div>
 
