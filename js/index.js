@@ -232,32 +232,6 @@ function onSuccess(position) {
 
     });
 
-    var northMap = L.map('mapNorthid').setView([position.coords.latitude, position.coords.longitude], 10);
-    loadMap(northMap);
-    L.marker([-20.135462, 57.524831]).addTo(mymap).bindPopup("Le Hochet Social Welfare Centre, Dr Manilall Rd Terre Rouge .");
-
-
-    /*south MAP MARKER*/
-    var southMap = L.map('maSouthId').setView([position.coords.latitude, position.coords.longitude], 10);
-    loadMap(southMap);
-    L.marker([-20.135462, 57.524831]).addTo(mymap).bindPopup("Le Hochet Social Welfare Centre, Dr Manilall Rd Terre Rouge .");
-
-    /*EAST MAP MARKER*/
-    var eastMap = L.map('mapEastId').setView([position.coords.latitude, position.coords.longitude], 10);
-    loadMap(eastMap);
-    L.marker([-20.135462, 57.524831]).addTo(mymap).bindPopup("Le Hochet Social Welfare Centre, Dr Manilall Rd Terre Rouge .");
-
-    /*WEST MAP MARKER*/
-    var westMap = L.map('mapWestId').setView([position.coords.latitude, position.coords.longitude], 10);
-    loadMap(westMap);
-    L.marker([-20.135462, 57.524831]).addTo(mymap).bindPopup("Le Hochet Social Welfare Centre, Dr Manilall Rd Terre Rouge .");
-
-    /*Center MAP MARKER*/
-    var CenterMap = L.map('mapCenterId').setView([position.coords.latitude, position.coords.longitude], 10);
-    loadMap(CenterMap);
-    L.marker([-20.135462, 57.524831]).addTo(mymap).bindPopup("Le Hochet Social Welfare Centre, Dr Manilall Rd Terre Rouge .");
-
-
 
 
 
@@ -270,19 +244,4 @@ function onError(error) {
 
 init();
 
-function loadMap(mapName) {
 
-
-    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoicmltaTg4IiwiYSI6ImNqYTVha2ZsZTltanUzM3F0bjV1a2k3ZW8ifQ.3ZYBWHzXLzQfzJR6V11g-Q', {
-        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery � <a href="http://mapbox.com">Mapbox</a>',
-        maxZoom: 18,
-        id: 'mapbox.streets',
-        accessToken: 'pk.eyJ1IjoicmltaTg4IiwiYSI6ImNqYTVha2ZsZTltanUzM3F0bjV1a2k3ZW8ifQ.3ZYBWHzXLzQfzJR6V11g-Q'
-    }).addTo(mapName);
-
-    L.marker([-20.135462, 57.524831]).addTo(mymap).bindPopup("Le Hochet Social Welfare Centre, Dr Manilall Rd Terre Rouge .");
-
-
-
-
-}
