@@ -87,6 +87,10 @@ function onSuccess(position) {
             /*MAP API*/
 
 
+            $(document).on("pagechange", "#body", function (e, f) {
+                var page_id = f.toPage[0].id;
+
+                if(page_id === "mylocation") {
                     var mymap = L.map('mapid').setView([position.coords.latitude, position.coords.longitude], 12);
 
                     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoicmltaTg4IiwiYSI6ImNqYTVha2ZsZTltanUzM3F0bjV1a2k3ZW8ifQ.3ZYBWHzXLzQfzJR6V11g-Q', {
@@ -104,12 +108,9 @@ function onSuccess(position) {
                         radius: 500
                     }).addTo(mymap).bindPopup("You are here.");
 
+                }
 
-
-
-
-
-
+                if(page_id === "emergency-shelters") {
                     var mapName = L.map('shelterMapid').setView([position.coords.latitude, position.coords.longitude], 10);
                     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoicmltaTg4IiwiYSI6ImNqYTVha2ZsZTltanUzM3F0bjV1a2k3ZW8ifQ.3ZYBWHzXLzQfzJR6V11g-Q', {
                         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery � <a href="http://mapbox.com">Mapbox</a>',
@@ -127,7 +128,8 @@ function onSuccess(position) {
 
 
                     }
-
+                }
+            });
 
             var string = "";
 
