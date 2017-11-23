@@ -164,22 +164,35 @@ window.onload = function () {
 
 $(document).on("pagechange", "#body", function (e, f) {
 
+    $('#typeHome').attr('data-type', "");
+    $('#typeFire').attr('data-type', "");
+    $('#typeFlood').attr('data-type', "");
+    $('#typeCyclone').attr('data-type', "");
+    $('#typeNews').attr('data-type', "");
+    $('#typeShel').attr('data-type', "");
+
     var page_id = f.toPage[0].id;
     if(page_id === "home"){
+        $('#typeHome').attr('data-type', localStorage.getItem('typewrite'));
         typing("#typeHome");
     }else if(page_id === "fire") {
+        $('#typeFire').attr('data-type', localStorage.getItem('fire'));
         typing("#typeFire");
 
     }else if(page_id === "flood") {
+        $('#typeFlood').attr('data-type', localStorage.getItem('flood'));
         typing("#typeFlood");
 
     }else if(page_id === "cyclone") {
+        $('#typeCyclone').attr('data-type', localStorage.getItem('cyclone'));
         typing("#typeCyclone");
 
     }else if(page_id === "newsfeed") {
+        $('#typeNews').attr('data-type', localStorage.getItem('tnews'));
         typing("#typeNews");
 
     }else if(page_id === "emergency-shelters") {
+        $('#typeShel').attr('data-type', localStorage.getItem('tshelther'));
         typing("#typeShel");
 
     }
