@@ -79,7 +79,7 @@
                 console.log(geo);
 
                 var fire = JSON.parse(localStorage.getItem('fire_precautions'));
-               // console.log(fire.fire_precautions[0].body);
+                // console.log(fire.fire_precautions[0].body);
                 $('.fire_precautions').each(function (index) {
                     $(this).html(fire.fire_precautions[index].body);
                 });
@@ -209,8 +209,8 @@
 
                 <div data-role="tabs" id="tabs">
                     <div data-role="navbar">
-                        <ul>
-                            <li><a href="#one" data-ajax="false">Precaution</a></li>
+                        <ul class="full-width">
+                            <li class=""><a href="#one" data-ajax="false" class="">Precaution</a></li>
                             <li><a href="#two" data-ajax="false">Emergency</a></li>
                         </ul>
                     </div>
@@ -221,78 +221,87 @@
 
                             <div data-role="collapsible">
 
-                                <h5 class="fire_pre_header">Section 1</h5>
+                                <h5 class="fire_pre_header"></h5>
                                 <p class="fire_precautions"></p>
                             </div>
                             <div data-role="collapsible">
 
-                                <h5 class="fire_pre_header">Section 1</h5>
+                                <h5 class="fire_pre_header"></h5>
                                 <p class="fire_precautions"></p>
                             </div>
                             <div data-role="collapsible">
 
-                                <h5 class="fire_pre_header">Section 1</h5>
+                                <h5 class="fire_pre_header"></h5>
                                 <p class="fire_precautions"></p>
                             </div>
                             <div data-role="collapsible">
 
-                                <h5 class="fire_pre_header">Section 1</h5>
+                                <h5 class="fire_pre_header"></h5>
                                 <p class="fire_precautions"></p>
                             </div>
                             <div data-role="collapsible">
 
-                                <h5 class="fire_pre_header">Section 1</h5>
+                                <h5 class="fire_pre_header"></h5>
                                 <p class="fire_precautions"></p>
                             </div>
                             <div data-role="collapsible">
 
-                                <h5 class="fire_pre_header">Section 1</h5>
+                                <h5 class="fire_pre_header"></h5>
                                 <p class="fire_precautions"></p>
                             </div>
                             <div data-role="collapsible">
 
-                                <h5 class="fire_pre_header">Section 1</h5>
+                                <h5 class="fire_pre_header"></h5>
                                 <p class="fire_precautions"></p>
                             </div>
                             <div data-role="collapsible">
 
-                                <h5 class="fire_pre_header">Section 1</h5>
+                                <h5 class="fire_pre_header"></h5>
                                 <p class="fire_precautions"></p>
                             </div>
                             <div data-role="collapsible">
 
-                                <h5 class="fire_pre_header">Section 1</h5>
+                                <h5 class="fire_pre_header"></h5>
                                 <p class="fire_precautions"></p>
                             </div>
                             <div data-role="collapsible">
 
-                                <h5 class="fire_pre_header">Section 1</h5>
+                                <h5 class="fire_pre_header"></h5>
                                 <p class="fire_precautions"></p>
                             </div>
                             <div data-role="collapsible">
 
-                                <h5 class="fire_pre_header">Section 1</h5>
+                                <h5 class="fire_pre_header"></h5>
                                 <p class="fire_precautions"></p>
                             </div>
-
-
-
-
                         </div>
                     </div>
 
 
                     <div id="two">
                         <h3 class="font text-border text-center">Safety Tips</h3>
-                        <div data-role="collapsibleset" data-corners="false">
+                        <div class="fire_safety">
+                            <ol data-role="listview">
+                                <li style="white-space:normal;">Close the door of the premises or area where the fire is located so as to contain it.</li>
+                                <li style="white-space:normal;">Warn people nearby to immediately evacuate the area.</li>
+                                <li style="white-space:normal;">Set off the fire alarm or call reception.</li>
+                            </ol>
+                            <h3><stong>DO NOT attempt to put out the fire</stong></h3>
 
-                            <div data-role="collapsible">
+                            <h3><stong>DO NOT attempt to salvage equipment or objects – you are putting yourself at risk</stong></h3>
+                            <br/>
 
-                                <h5>Section 1</h5>
-                                <p class="fire_precautions"></p>
-                            </div>
-
-
+                            <strong>REMEMBER</strong>
+                            <ul style="list-style-type: square;">
+                                <li>If you are the last to leave the premises, close the doors to contain the fire but do not lock them.</li>
+                                <li>Use the nearest stairs and exit, as long as it is free from smoke; otherwise, seek another evacuation route.</li>
+                                <li>Follow the instructions given over the PA system.(if Present)</li>
+                                <li>Do NOT use the elevators</li>
+                                <li>If there is smoke, crawl out of the building.</li>
+                                <li>Do NOT stop at or near the exit. Leave the way free for other people evacuating the building.</li>
+                                <li>Go directly to the assembly point or a safe zone</li>
+                                <li>Do NOT reenter the evacuated building under any circumstances until you receive specific instructions to do so from the building’s management.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>

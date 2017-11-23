@@ -48,12 +48,11 @@ body {
 /*.ui-page-theme-a .ui-btn .fa{
     font-size:1em;
 }*/
-[data-role=navbar] ul li a {
-    padding: 1.5em 1em;
+[data-role=footer] [data-role=navbar] ul li a {
     background-color: #0a71b3 !important;
     color: #fff !important;
     border-color: #1ea8e0 !important;
-    font-size: 24px;
+    padding: 1em;
 }
 
 [data-role=navbar] .fa {
@@ -831,4 +830,7 @@ div.ui-page.ui-page-theme-a.ui-page-header-fixed.ui-page-active {
 ul{
     padding: 10px;
     list-style-type: decimal;
+}
+.full-width{
+    
 }
