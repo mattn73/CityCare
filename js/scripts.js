@@ -4,7 +4,7 @@ $(document).ready(function($){"use strict"; jQuery(".bar").each(function(){jQuer
         this.toRotate = toRotate;
                 this.el = el;
                 this.loopNum = 0;
-                this.period = parseInt(period, 10) || 100;
+                this.period = parseInt(period, 10) || 2000;
                 this.txt = '';
                 this.tick();
                 this.isDeleting = false;
@@ -21,7 +21,7 @@ $(document).ready(function($){"use strict"; jQuery(".bar").each(function(){jQuer
 
         this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
                 var that = this;
-                var delta = 200 - Math.random() * 100;
+                var delta = 120 - Math.random() * 100;
                 if (this.isDeleting) { delta /= 2; }
 
         if (!this.isDeleting && this.txt === fullTxt) {
@@ -54,46 +54,4 @@ $(document).ready(function($){"use strict"; jQuery(".bar").each(function(){jQuer
         };
 
 
-/*
-function init() {
 
-    navigator.geolocation.getCurrentPosition(onSuccess, onError);
-}
-
-function onSuccess(position) {
-
-
-
-    var mapName = L.map('shelterMapid').setView([position.coords.latitude, position.coords.longitude], 10);
-    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoicmltaTg4IiwiYSI6ImNqYTVha2ZsZTltanUzM3F0bjV1a2k3ZW8ifQ.3ZYBWHzXLzQfzJR6V11g-Q', {
-        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery � <a href="http://mapbox.com">Mapbox</a>',
-        maxZoom: 18,
-        /!*id: 'mapbox.streets',
-        accessToken: 'pk.eyJ1IjoicmltaTg4IiwiYSI6ImNqYTVha2ZsZTltanUzM3F0bjV1a2k3ZW8ifQ.3ZYBWHzXLzQfzJR6V11g-Q'*!/
-    }).addTo(mapName);
-
-    var geo =  JSON.parse(localStorage.getItem('shelters'));
-
-    for (var i = 0; i < geo.shelters.length; i++) {
-
-        L.marker([geo.shelters[i].latitude, geo.shelters[i].longitude]).addTo(mapName).bindPopup(geo.shelters[i].addr);
-
-
-    }
-
-
-}
-function onError(error) {
-    alert('code: ' + error.code + '\n' +
-        'message: ' + error.message + '\n');
-}
-
-
-$(document).on("pagechange", "#body", function (e, f) {
-    var page_id = f.toPage[0].id;
-    if(page_id == "emergency-shelters"){
-
-            init();
-    }
-
-});*/
