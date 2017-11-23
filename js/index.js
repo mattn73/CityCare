@@ -49,7 +49,7 @@ var app = {
 };
 
 function init() {
-
+    alert("navigator.geolocation works well");
     navigator.geolocation.getCurrentPosition(onSuccess, onError);
 }
 function onSuccess(position) {
