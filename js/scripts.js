@@ -151,7 +151,7 @@ TxtType.prototype.tick = function () {
 };
 window.onload = function () {
 
-    typing("#typeHome");
+   // typing("#typeHome");
 
     var x = document.getElementsByClassName("typewrite");
     var css = document.createElement("style");
